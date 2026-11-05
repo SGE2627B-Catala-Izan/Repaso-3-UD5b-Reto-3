@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout(~{::title}, ~{::main-content})}">
+<head>
+    <title>Inicio — Xarxallibres</title>
+</head>
+<body>
+<th:block th:fragment="main-content">
+    <!-- Aquí va el contenido específico del Panel de Inicio  -->
+    <br>
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center">
+        <!-- Lado Izquierdo -->
+        <div style="text-align: center;" class="col-md-5 col-lg-5 col-xl-5">
+        </div>
+        <!-- Lado Derecho -->
+        <div style="text-align: center; align-content: center;" class="col-md-7 col-lg-7 col-xl-7">
+            <!-- Fila 1 -->
+            <div class="row mb-3 justify-content-center">
+                <div class="col-8">
+                    <!-- Tu primera Card aquí -->
+                    <a class="card xarxa-card text-decoration-none my-3" th:href="@{/alumnos}">
+                        <div class="card-body d-flex align-items-center gap-3">
+                            <!-- Lado Izquierdo -->
+                            <div style="text-align: center;" class="col-md-2 col-lg-2 col-xl-2">
+                                <i class="bi bi-mortarboard"></i>
+                            </div>
+                            <!-- Lado Central-->
+                            <div style="text-align: center;" class="col-md-6 col-lg-6 col-xl-6">
+                                <div class="xarxa-card-total">Alumnos</div>
+                            </div>
+                            <!-- Lado Derecho -->
+                            <div style="text-align: center;" class="col-md-4 col-lg-4 col-xl-4">
+                                <div class="xarxa-card-total" th:text="${totalAlumnos}">0</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Fila 2 -->
+            <div class="row mb-3 justify-content-center">
+                <div class="col-8">
+                    <!-- Tu segunda Card aquí -->
+                    <a class="card xarxa-card text-decoration-none my-3" th:href="@{/cursos}">
+                        <div class="card-body d-flex align-items-center gap-3">
+                            <!-- Lado Izquierdo -->
+                            <div style="text-align: center;" class="col-md-2 col-lg-2 col-xl-2">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <!-- Lado Central-->
+                            <div style="text-align: center;" class="col-md-6 col-lg-6 col-xl-6">
+                                <div class="xarxa-card-total">Cursos</div>
+                            </div>
+                            <!-- Lado Derecho -->
+                            <div style="text-align: center;" class="col-md-4 col-lg-4 col-xl-4">
+                                <div class="xarxa-card-total" th:text="${totalCursos}">0</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Fila 3 -->
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <!-- Tu tercera Card aquí -->
+                    <a class="card xarxa-card text-decoration-none my-3" th:href="@{/libros}">
+                        <div class="card-body d-flex align-items-center gap-3">
+                            <!-- Lado Izquierdo -->
+                            <div style="text-align: center;" class="col-md-2 col-lg-2 col-xl-2">
+                                <i class="bi bi-journals"></i>
+                            </div>
+                            <!-- Lado Central-->
+                            <div style="text-align: center;" class="col-md-6 col-lg-6 col-xl-6">
+                                <div class="xarxa-card-total">Libros</div>
+                            </div>
+                            <!-- Lado Derecho -->
+                            <div style="text-align: center;" class="col-md-4 col-lg-4 col-xl-4">
+                                <div class="xarxa-card-total" th:text="${totalLibros}">0</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <br>
+</th:block>
+</body>
+</html>

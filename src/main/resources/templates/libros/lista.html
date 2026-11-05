@@ -1,0 +1,63 @@
+<!doctype html>
+<html
+  lang="es"
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: layout(~{::title}, ~{::main-content})}"
+>
+  <head>
+    <title>Libros — Xarxallibres</title>
+  </head>
+  <body>
+    <th:block th:fragment="main-content">
+      <!-- Barra superior: Breadcrumb + Búsqueda y Botón Nuevo -->
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+        <!-- Ubicación de la página -->
+        <nav aria-label="breadcrumb" class="xarxa-breadcrumb h4 mb-0">
+          <ol class="breadcrumb mb-1">
+            <li class="breadcrumb-item"><a th:href="@{/}">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Libros</li>
+          </ol>
+        </nav>
+        <div class="d-flex gap-2">
+          <input
+            class="form-control form-control-sm"
+            type="search"
+            placeholder="Buscar libro…"
+          />
+          <button class="btn btn-primary btn-sm">
+            <i class="bi bi-plus-lg"></i> Nuevo
+          </button>
+        </div>
+      </div>
+
+      <!-- Tabla de libros -->
+      <div class="table-responsive rounded-3 shadow-sm">
+        <table class="table table-hover xarxa-table mb-0" id="miTabla">
+          <thead>
+            <tr>
+              <th style="text-align: center; width: 6%">Id</th>
+              <th style="width: 10%">Curso</th>
+              <th style="width: 20%">Área</th>
+              <th style="width: 14%">ISBN</th>
+              <th style="width: 25%">Título</th>
+              <th style="width: 15%">Observaciones</th>
+              <th style="text-align: center; width: 10%">Cantidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Filas de cada Libro -->
+            <tr th:each="libro : ${libros}">
+              <td style="text-align: center" th:text="${libro.id}"></td>
+              <td th:text="${libro.curso}"></td>
+              <td th:text="${libro.area}"></td>
+              <td th:text="${libro.isbn}"></td>
+              <td th:text="${libro.titulo}"></td>
+              <td th:text="${libro.observaciones}"></td>
+              <td style="text-align: center" th:text="${libro.cantidad}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </th:block>
+  </body>
+</html>

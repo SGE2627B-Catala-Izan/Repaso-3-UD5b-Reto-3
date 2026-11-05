@@ -1,0 +1,59 @@
+<!doctype html>
+<html
+  lang="es"
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: layout(~{::title}, ~{::main-content})}"
+>
+  <head>
+    <title>Cursos — Xarxallibres</title>
+  </head>
+  <body>
+    <th:block th:fragment="main-content">
+      <!-- Barra superior: Breadcrumb + Búsqueda y Botón Nuevo -->
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+        <!-- Ubicación de la página -->
+        <nav aria-label="breadcrumb" class="xarxa-breadcrumb h4 mb-0">
+          <ol class="breadcrumb mb-1">
+            <li class="breadcrumb-item"><a th:href="@{/}">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Cursos</li>
+          </ol>
+        </nav>
+        <div class="d-flex gap-2">
+          <input
+            class="form-control form-control-sm"
+            type="search"
+            placeholder="Buscar curso…"
+          />
+          <button class="btn btn-primary btn-sm">
+            <i class="bi bi-plus-lg"></i> Nuevo
+          </button>
+        </div>
+      </div>
+
+      <!-- Tabla de cursos -->
+      <div class="table-responsive rounded-3 shadow-sm">
+        <table class="table table-hover xarxa-table mb-0" id="miTabla">
+          <thead>
+            <tr>
+              <th style="text-align: center; width: 6%">Id</th>
+              <th style="width: 20%">Curso</th>
+              <th style="width: 36%">Descripción</th>
+              <th style="width: 15%; text-align: center">Num. Grupos</th>
+              <th style="width: 15%; text-align: center">Num. Alumnos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Filas de cada Curso -->
+            <tr th:each="curso : ${cursos}">
+              <td style="text-align: center" th:text="${curso.id}"></td>
+              <td th:text="${curso.curso}"></td>
+              <td th:text="${curso.descripcion}"></td>
+              <td style="text-align: center" th:text="${curso.numGrupos}"></td>
+              <td style="text-align: center" th:text="${curso.numAlumnos}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </th:block>
+  </body>
+</html>

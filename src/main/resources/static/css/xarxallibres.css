@@ -1,0 +1,141 @@
+/* static/css/xarxallibres.css: tema escolar (libros y papel) inspirado en Odoo */
+:root {
+    --xarxa-green: #14532D;
+    --xarxa-green-light: #1E7A45;
+    --xarxa-orange: #F28C28;
+    --xarxa-orange-dark: #D9741A;
+    --xarxa-paper: #FFF8E7;
+    --xarxa-nata: #FBF9F3;
+    --xarxa-line: #E5DFCC;
+    --xarxa-crema: #FDEBD3;
+}
+
+#logo_IES {
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+#logo_GVA {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#portada {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.jumbotron {
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+    color: var(--xarxa-green);
+}
+.jumbotron p {
+    margin-bottom: 0;
+}
+.jumbotron small {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--xarxa-orange-dark);
+}
+
+body.xarxa-body {
+    background-color: var(--xarxa-line);
+    color: #2B2B2B;
+}
+
+/* Barra superior verde pizarra con degradado */
+.xarxa-navbar {
+    background: linear-gradient(90deg, var(--xarxa-green), var(--xarxa-green-light));
+    border-bottom: 3px solid var(--xarxa-orange);
+}
+.xarxa-navbar .navbar-brand,
+.xarxa-navbar .navbar-nav .nav-link {
+    color: #FFFFFF;
+}
+.xarxa-navbar .navbar-nav .nav-link:hover,
+.xarxa-navbar .navbar-nav .nav-link.active {
+    color: var(--xarxa-paper);
+    text-decoration: underline var(--xarxa-orange) 2px;
+    text-underline-offset: 6px;
+}
+.xarxa-avatar {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--xarxa-orange);
+    color: #FFFFFF;
+}
+
+/* Botón principal en naranja */
+.btn-primary {
+    --bs-btn-bg: var(--xarxa-orange);
+    --bs-btn-border-color: var(--xarxa-orange);
+    --bs-btn-hover-bg: var(--xarxa-orange-dark);
+    --bs-btn-hover-border-color: var(--xarxa-orange-dark);
+    --bs-btn-active-bg: var(--xarxa-orange-dark);
+    --bs-btn-active-border-color: var(--xarxa-orange-dark);
+    --bs-btn-color: #FFFFFF;
+    --bs-btn-hover-color: #FFFFFF;
+    --bs-btn-active-color: #FFFFFF;
+}
+
+/* Panel de control: migas y título */
+.xarxa-breadcrumb .breadcrumb-item a {
+    color: var(--xarxa-green-light);
+    text-decoration: none;
+}
+.xarxa-title {
+    color: var(--xarxa-green);
+    font-weight: 600;
+}
+
+/* Vista lista: cabecera papel y fila resaltada */
+.xarxa-table {
+    --bs-table-hover-bg: var(--xarxa-crema);
+}
+.xarxa-table thead th {
+    background-color: var(--xarxa-green-light);
+    color: var(--xarxa-paper);
+    border-bottom: 2px solid var(--xarxa-green);
+}
+
+/* Tarjetas del panel de control */
+.xarxa-card {
+    text-align: center;
+    background-color: var(--xarxa-nata);       
+    border: 1px solid var(--xarxa-line);        
+    border-left: 5px solid var(--xarxa-orange); 
+    border-radius: .5rem;
+    box-shadow: 0 1px 3px rgba(20, 83, 45, .08);
+    font-size: 2rem;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.xarxa-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(20, 83, 45, .18);
+}
+.xarxa-card .bi {
+    font-size: 3.5rem;
+    color: var(--xarxa-green-light);
+}
+.xarxa-card-total {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--xarxa-green-light);
+}
+
+/* Pie de página */
+.xarxa-footer {
+    background-color: var(--xarxa-green);
+    color: var(--xarxa-paper);
+    border-top: 3px solid var(--xarxa-orange);
+}
