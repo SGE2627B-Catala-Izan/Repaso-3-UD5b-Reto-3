@@ -10,7 +10,9 @@
   <body>
     <th:block th:fragment="main-content">
       <!-- Barra superior: Breadcrumb + Búsqueda y Botón Nuevo -->
-      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+      <div
+        class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3"
+      >
         <!-- Ubicación de la página -->
         <nav aria-label="breadcrumb" class="xarxa-breadcrumb h4 mb-0">
           <ol class="breadcrumb mb-1">
@@ -67,8 +69,31 @@
               <td th:text="${alumno.curso}"></td>
             </tr>
           </tbody>
+          <tfoot style="--bs-table-bg: var(--xarxa-green-light)">
+            <tr>
+              <td colspan="100%" class="py-2">
+                <!-- Componente de Paginación de Bootstrap -->
+                <nav aria-label="Paginación de la tabla">
+                  <ul
+                    class="pagination mb-0 justify-content-center"
+                    id="paginacion"
+                  >
+                    <!-- Los botones se generarán dinámicamente con JavaScript -->
+                  </ul>
+                </nav>
+              </td>
+            </tr>
+          </tfoot>
         </table>
       </div>
+      <script src="paginacion.js"></script>
+      <script>
+        // Asegúrate de que el DOM esté listo
+        document.addEventListener("DOMContentLoaded", function () {
+          // Puedes cambiar el último número para ajustar las filas por página de este HTML
+          inicializarPaginacion("miTabla", "paginacion", 10);
+        });
+      </script>
     </th:block>
   </body>
 </html>
